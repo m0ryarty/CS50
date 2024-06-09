@@ -1,0 +1,5 @@
+CS50x/play-together/.env
+CS50x/play-together/.venv/
+CS50x/play-together/flask_session/
+CS50x/play-together/__pycache__/
+CS50x/play-together/play-along.db

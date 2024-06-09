@@ -1,0 +1,16 @@
+Flask (pip install Flask)
+CS50 (pip install cs50)
+BeautifulSoup (pip install beautifulsoup4)
+Flask-Session (pip install Flask-Session)
+flask-cors (pip install -U flask-cors)
+Google client (pip install google-api-python-client)
+dotenv (pip install python-dotenv)
+
+create a sqlite db with the following:
+CREATE TABLE `playalong` (`id` INTEGER PRIMARY KEY NOT NULL, `ytId` TEXT NOT NULL, title TEXT NOT NULL, tab TEXT NOT NULL, tabId TEXT NOT NULL)
+
+Aquire a Google api: this wil help:
+https://developers.google.com/youtube
+
+Nedd to create an .env file with the following content:
+APIYT=<your api here>
