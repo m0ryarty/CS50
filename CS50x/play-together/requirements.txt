@@ -12,5 +12,5 @@ CREATE TABLE `playalong` (`id` INTEGER PRIMARY KEY NOT NULL, `ytId` TEXT NOT NUL
 Aquire a Google api: this wil help:
 https://developers.google.com/youtube
 
-Nedd to create an .env file with the following content:
+Need to create an .env file with the following content:
 APIYT=<your api here>
