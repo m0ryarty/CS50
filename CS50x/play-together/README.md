@@ -7,7 +7,17 @@
 Sometimes I have fun playing my guitar accompanying my favorite artists. For this I look for the songs on YouTube and the chords, in general, on the ultimate guitar.
 For this I imagined "Play Toghether". Make these searches easier and save them for other times.
 
-Playing together is simple. You provide the name of the song and artist, the application searches YouTube and Ultimete Guitar. The result is some suggestions for videos and lyrics and chords. Those selected must be saved for other days of fun with the guitar.
+Playing together is simple. You provide the name of the song and artist, the application searches YouTube and Ultimate Guitar. The result is some suggestions for videos and lyrics and chords. Those selected must be saved for other days of fun with the guitar.
+
+On the first page you'l need to provide the name of the song or select one of songs saved previously.
+
+If is a new song you'll go to a results page with some videos and chords to choose.
+
+After your selection the YouTube and ultimate guitar pages will open to you play together.
+
+If it's a good selection you can save this or return to results page for another selection.
+
+And that's it!
 
 For everything to work you will need:
 
