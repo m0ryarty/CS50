@@ -19,6 +19,12 @@ If it's a good selection you can save this or return to results page for another
 
 And that's it!
 
+In this project, in addition to using the technologies I learned during the course, I looked for others, such as beautifulsoup, the GOOGLE API.
+Some challenges appeared, as I tried selenium first, but some problems led me to prefer beatifulsoup.
+The software architecture was also something that made me learn more about Flask, especially when it comes to passing arguments from one route to another.
+As for the design, I preferred something cleaner, using mainly Bootstrap.
+Anyway, the application is simple in its use and purpose, however, it meant an increase in knowledge for me.
+
 For everything to work you will need:
 
 Flask (pip install Flask)

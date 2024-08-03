@@ -46,7 +46,7 @@ def catch_yt(song):
     yt_results = []            
     yt_request = youtube.search().list(
         part="snippet",
-        maxResults=4,
+        maxResults=8,
         q=song).execute()
 
     
@@ -130,7 +130,7 @@ def index():
         session['song'] = song
         
     else:
-        songs = db.execute("SELECT * FROM playalong")
+        songs = db.execute("SELECT * FROM playalong ORDER BY artist")
 
         
         return render_template('index.html', songs=songs)
@@ -158,8 +158,14 @@ def results():
                 
         yt_data = yt_data_choice(yt_results_obj, yt_choice) 
         ug_data = ug_data_choice(ug_results_obj, ug_choice)
+
+        
                     
         song_data = {**yt_data, **ug_data}
+
+        
+
+        
             
         session['yt_choice'] = yt_choice
         session['ug_choice'] = ug_choice
@@ -205,9 +211,11 @@ def songs():
     ug_choice = session['ug_choice']
     song_data = session['song_data']
 
+    
+
     if request.method == 'POST':
 
-        db.execute("INSERT INTO playalong(ytId, title, tab, tabId) VALUES(?, ?, ?, ?)", song_data['id'], song_data['title'], song_data['ug_tab'], song_data['ug_songId'])
+        db.execute("INSERT INTO playalong(ytId, title, tab, tabId, song, artist, thumbnail) VALUES(?, ?, ?, ?, ?, ?, ?)", song_data['id'], song_data['title'], song_data['ug_tab'], song_data['ug_songId'], song_data['ug_song_name'], song_data['ug_artist'], song_data['thumbnail'])
 
         
         return redirect('/')   

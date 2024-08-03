@@ -1,0 +1,18 @@
+-- In this SQL file, write (and comment!) the schema of your database, including the CREATE TABLE, CREATE INDEX, CREATE VIEW, etc. statements that compose it
+
+-- Football
+--
+-- teams 
+-- id, name,colors, symbol, foundation, stadium(fk), location(fk), nickname, mascot,
+-- stadium
+-- id, name,  location (fk), nickname, address, capacity, foundation, team(fk)
+-- players
+-- id, nickname, real_name, birth_date
+-- games
+-- id, datetime, location(fk), home, visitor, championship(fk), lineup(fk),
+-- lineups
+--id, player1, player2, player3, player4, player5, player6, player7, player8, player9, player10, player11, substitute1, substitute2, substitute3, substitute4, substitute5, substitution1, substitution2, substitution3, substitution4, substitution5
+-- goals
+-- id, date, games(fk), players(fk), at,
+-- championships
+-- id, season, type, location(fk),

@@ -31,24 +31,33 @@
 		<ul class="list-group">
 			{% for song in songs %}
                 <li class="list-group-item">
-					<div class="input-group mb-3">
+			<div class="input-group input-group-lg">
+			<img src={{song.thumbnail}} class="img-thumbnail" alt="Song thumbnail" style="width:90px; height: 70px;">
 			<input
 				type="text"
 				class="form-control"
 				aria-label="Sizing example input"
 				aria-describedby="inputGroup-sizing-default"
 				name="song_choice"
-				value="{{song.title}}{{' - chord: '}}{{song.tabId}}"
+				value="{{song.artist}}: {{song.song}}{{' - chord: '}}{{song.tabId}}"
 				disabled
 				readonly
 			/>
 			<button
-				class="btn btn-success"
+				class="btn btn-light"
 				type="submit"
 				id="button-addon1"
 				onclick="abrirNovaAba('{{song.tab}}', '{{song.ytId}}')"
 			>
-				Play
+				<i class="bi bi-play-fill" style="font-size: 2rem; color:forestgreen;"></i>
+</svg>
+			</button>
+			<button
+				class="btn btn-light"
+				type="submit"
+			>
+				<i class="bi bi-trash" style="font-size: 1.2rem; color: firebrick;"></i>
+</svg>
 			</button>
 				</li>
             {% endfor %}
