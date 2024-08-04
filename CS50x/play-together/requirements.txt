@@ -7,7 +7,7 @@ Google client (pip install google-api-python-client)
 dotenv (pip install python-dotenv)
 
 create a sqlite db with the following:
-CREATE TABLE `playalong` (`id` INTEGER PRIMARY KEY NOT NULL, `ytId` TEXT NOT NULL, title TEXT NOT NULL, tab TEXT NOT NULL, tabId TEXT NOT NULL)
+CREATE TABLE `playalong` (`id` INTEGER PRIMARY KEY NOT NULL, `ytId` TEXT NOT NULL, title TEXT NOT NULL, tab TEXT NOT NULL, tabId TEXT NOT NULL, artist TEXT, song TEXT, thumbnail TEXT)
 
 Aquire a Google api: this wil help:
 https://developers.google.com/youtube

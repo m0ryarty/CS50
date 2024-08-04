@@ -1,3 +1,6 @@
+from MenuCreator import CreateMenu
+
+
 class harmonia():
     def __init__(self):
         self.major = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'Ab', 'A', 'Bb', 'B']
@@ -98,14 +101,43 @@ class harmonia():
             next_index = (index + number) % len(self.minor)
             return self.minor[next_index]
         
-    
+
+
+  
 def main():
-    h = harmonia()
-    print(h.I_IV_V('Gb'))
-    
+
     
 
+    principal = CreateMenu(title="*** Harmony ***", elements=[  
+        'Scales',  
+        'Chord Progression',  
+        'Exit'  
+    ])
 
-main()
+    principal.load_menu()
+    principal.wait()  
+    
+
+    if principal.get_selected_item() == 0:
+        scales()
+
+    elif principal.get_selected_item() == 1:
+        print("Selected second element!")
+
+    else:
+        pass
+
+def scales():
+    tonic = input('Tonic = ')
+    print(tonic)
+    
+     
+
+
+
+
+if __name__ == "__main__":
+    main()
+
                       
                       

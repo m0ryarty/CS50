@@ -3,7 +3,7 @@
 -- Football
 --
 -- teams 
--- id, name,colors, symbol, foundation, stadium(fk), location(fk), nickname, mascot,
+-- id, name,colors, symbol, foundation, stadium(fk), location(fk), nickname, mascot, championships(fk), games(fk),
 -- stadium
 -- id, name,  location (fk), nickname, address, capacity, foundation, team(fk)
 -- players
