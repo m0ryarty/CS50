@@ -1,0 +1,7 @@
+POST http://127.0.0.1:8000/token HTTP/1.1
+Authorization: Basic rask@example.com:P@ssw0rd1
+
+###
+GET http://127.0.0.1:8000/boxes HTTP/1.1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQxMDQyOTU3LCJpYXQiOjE3NDEwNDI2NTcsImp0aSI6IjA4NGY2MjQ1ODc5MjQ2NTc5NWVjODVlOTU5MjdjYTI4IiwidXNlcl9pZCI6MSwiZnVsbF9uYW1lIjoiIiwidXNlcm5hbWUiOiJyYXNrIiwiZW1haWwiOiJyYXNrQGV4YW1wbGUuY29tIiwidmVyaWZpZWQiOmZhbHNlfQ.O8j6lHj2ZQiTE0mjIT3FB2DKvBXV8xis5vl3pbeTbSo

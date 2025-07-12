@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Transaction</th>
+        <th scope="col">Symbol</th>
+        <th scope="col">Shares</th>
+        <th scope="col">Price</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for deal in deals %}
+      <tr class="table-light">
+        <td>{{deal.deal_type}}</td>
+        <td>{{deal.symbol}}</td>
+
+        {% if deal.shares < 1 %}
+        <td>{{deal.shares * -1}}</td>
+        {% else %}
+        <td>{{deal.shares}}</td>
+        {% endif %}
+
+        <td>{{deal.price}}</td>
+        <td>{{ deal.timestamp}}</td>
+      </tr>
+      {% endfor %}
+      <tr>
+        <td></td>
+        <td></td>
+        <th>Stock Total</th>
+        <td>{{total_stock}}</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <th>Cash</th>
+        <td>{{cash}}</td>
+
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <th>TOTAL</th>
+        <td>{{total}}</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

@@ -1,0 +1,13 @@
+project4/.env
+final/capstone/back/.env
+.vscode/settings.json
+final/capstone/front/eslint.config.js
+db.sqlite3
+__pycache__
+migrations
+*:Zone.Identifier
+final/testes/teste.Ipynb
+testes/teste.ipynb
+package-lock.json
+final/capstone/front/package-lock.json
+final/capstone/front/package.json

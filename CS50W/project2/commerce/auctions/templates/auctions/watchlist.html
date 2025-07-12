@@ -1,0 +1,58 @@
+{% extends "auctions/layout.html" %}
+
+
+{% block body %}
+
+<h3>Watchlist</h3>
+
+
+{% for item in watchlist %}
+
+<a href="{% url 'listing'  item.id %}"  style="text-decoration: none;">
+
+        <card class="card mb-3" style="max-width: 900px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{item.image}}" class="img-fluid rounded-start" style="height: 200px;" >
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <p class="h4">{{item.title}}</p>
+
+                        <p class="h5 ">
+                            Price: ${{item.actual_price}}
+                            {% if item.actual_price == item.max_bid and item.bid_open %}
+                                <span class="badge rounded-pill text-bg-secondary">My Bid</span>
+                            {% elif item.actual_price == item.max_bid and not item.bid_open %}
+                            <span class="badge rounded-pill text-bg-success">Winner</span>
+                            {% elif item.actual_price != item.max_bid and not item.bid_open %}
+                            <span class="badge rounded-pill text-bg-secondary">Closed</span>
+
+                            {% endif %}
+
+                        </p>
+
+                        <p class="card-text">{{item.description}}</p>
+                        <p class="lead">Created {{item.created}}</p>
+                    </div>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end" style="font-size: 18px;">
+                        <form action="{% url 'watchlist' %}" method="post">
+                            {% csrf_token %}
+                            
+                            <button class="btn btn-primary" type="submit" name="id" value={{item.id}}>Delete</button>                            
+                        </form>        
+                    </div>
+                </div>
+            </div>
+        </card>
+    </a>
+
+{% empty %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" class="bi bi-emoji-dizzy" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/>
+  <path d="M9.146 5.146a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 0 1 .708.708l-.647.646.647.646a.5.5 0 0 1-.708.708l-.646-.647-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708m-5 0a.5.5 0 0 1 .708 0l.646.647.646-.647a.5.5 0 1 1 .708.708l-.647.646.647.646a.5.5 0 1 1-.708.708L5.5 7.207l-.646.647a.5.5 0 1 1-.708-.708l.647-.646-.647-.646a.5.5 0 0 1 0-.708M10 11a2 2 0 1 1-4 0 2 2 0 0 1 4 0"/>
+</svg>
+    <h4>Nothing to show here</h4>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', ()=>{
+
+
+                const start = ()=>{
+
+                    const multipleCorrect = '146'
+                    const freeCorrect = '38'
+
+                    const multiple = document.querySelectorAll('button.multiple')
+                    const responseMultiple = document.querySelector('#multiple')
+                    const responseFree = document.querySelector('#free')
+                    const answer = document.querySelector('#answer')
+
+                    for (let i = 0; i < multiple.length; i++) {
+
+                        multiple[i].addEventListener('click', ()=>{
+
+                            if (multiple[i].innerHTML == multipleCorrect) {
+                                multiple[i].style.backgroundColor = 'green'
+                                responseMultiple.innerText = 'Correct'
+                            } else {
+                                multiple[i].style.backgroundColor = 'red'
+                                responseMultiple.innerText = 'Incorrect'
+                            }
+                        })
+                    }
+
+
+                    const freeResponse = document.querySelector('input')
+                    freeResponse.addEventListener('change', (e)=>{
+                        if (e.target.value == freeCorrect) {
+                            e.preventDefault
+
+                            responseFree.innerText = 'Correct'
+                            answer.style.backgroundColor = 'green'
+
+                        } else{
+                            e.preventDefault
+                            responseFree.innerText = 'Incorrect'
+                            answer.style.backgroundColor = 'red'
+                        }
+                    })
+
+                    const check = document.querySelector('#check')
+                    check.addEventListener('click', freeResponse)
+
+
+        }
+
+        start()
+            })
+        </script>
+
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>How many moons are in saturn?</h3>
+                <h4 id= "multiple"></h4>
+                <div>
+                    <button class="multiple">135</button>
+                    <button class="multiple">184</button>
+                    <button class="multiple">127</button>
+                    <button class="multiple">146</button>
+                    <button class="multiple">12</button>
+
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>How many books
+                    Fyodor Dostoevsky wrote?</h3>
+                <h4 id='free'></h4>
+                <form>
+                    <input id='answer'>
+                    <button id='check'>Check Answer</button>
+                </form>
+
+
+            </div>
+        </div>
+    </body>
+
+</html>

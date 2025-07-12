@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quoted
+{% endblock %}
+
+{% block main %}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Symbol</th>
+        <th scope="col">Price</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="table-light">
+        <td >{{symbol}}</th>
+        <td>{{price}}</td>
+      </tr>
+      <tr>
+        <td ></th>
+        <td>You have {{cash}}</td>
+      </tr>
+      <tr>
+        <td ></th>
+        <td>You can afford {{afford}} shares</td>
+      </tr>
+    </tbody>
+  </table>
+{% endblock %}

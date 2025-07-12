@@ -1,0 +1,12 @@
+#new-post:hover{
+    cursor: pointer;
+}
+
+.post-text {  
+  text-indent: 25px;
+  margin-bottom: 10px;
+}
+.card-text { 
+  
+  margin-bottom: 5px;
+}

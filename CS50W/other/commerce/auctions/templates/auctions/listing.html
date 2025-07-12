@@ -1,0 +1,18 @@
+{% extends "auctions/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+    <card class="card border-light mb-3" style="max-width: 400px;">
+        <div class="row g-0">
+                
+            <p class="h4 card-header">Listing: {{listing.title}}</p>
+            <img src="{{listing.image}}" class="img-fluid rounded-start" >
+            <p class="lead">{{listing.description}}</p>
+            <p class="h2">Price: ${{listing.price}}</p>            
+                
+        </div>
+    </card>
+    <div>
+        {{ bid_form|crispy}}
+    </div>
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends "layout.html" %}{% block title %} Songs {% endblock %} {% block head
+    %} {{ super() }}
+    <script>
+        let ug_choice = '{{ug_choice}}'
+        let yt_choice = '{{yt_choice}}'
+        yt_url = `https://www.youtube.com/watch?v=${yt_choice}`
+        console.log(yt_url)
+
+        console.log(ug_choice)
+        function abrirNovaAba() {
+            window.open(yt_url, '_blank')
+            window.open(ug_choice, '_blank')
+        }
+
+        abrirNovaAba()
+    </script>
+
+    {% endblock %} {% block main %}
+    <div class="list-group">
+        <form action="/songs" method="post">
+            <div class="input-group mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    aria-label="Sizing example input"
+                    aria-describedby="inputGroup-sizing-default"
+                    name="song_choice"
+                    value="{{song_data.title}}{{' - chord: '}}{{song_data.ug_songId}}"
+                    disabled
+                    readonly
+                />
+                <button
+                    class="btn btn-outline-secondary"
+                    type="submit"
+                    id="button-addon1"
+                >
+                    Save
+                </button>
+            </div>
+        </form>
+    </div>
+    {% endblock %}

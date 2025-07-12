@@ -1,0 +1,52 @@
+a {
+    text-decoration: none;
+    color: black;
+
+}
+
+li {
+    font-size: 18px;
+}
+
+p {
+    font-size: 22px;
+}
+
+h3 {
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+.album-card {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+.img-album{
+    width: 80px;
+    height: 80px;
+}
+.img-city{
+    width: 250px;
+    height: 180px;
+}
+.main-city{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-bottom: 5px;
+    flex-wrap: wrap;
+}
+
+.card-body{
+    margin-bottom: 50px;
+}
+
+#imgsjp, #imgpr, #imgbrasil, #imgctba, #imgtjpr{
+    display: none;
+}
+
+.img-idx{
+    height: 500px;
+}
+

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+        <link href="styles.css" rel="stylesheet">
+        <title>My Webpage</title>
+    </head>
+    <body class="container">
+
+        <nav class="navbar navbar-expand-lg bg-light bac">
+            <div class="container-fluid">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/homepage/index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/homepage/music.html">Music</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/homepage/city.html">City</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/homepage/football.html">Football</a>
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+          </nav>
+
+          <main>
+            <div>
+             <h3>It's time to introduce myself:</h3>
+             <p>My name is Wilson de Souza Pereira</p>
+             <ul class="list-group list-group-flush">
+              <li class="list-group-item">Born in 11/08/1967</li>
+              <li class="list-group-item">in <a id="sjp" href="https://simple.wikipedia.org/wiki/S%C3%A3o_Jos%C3%A9_dos_Pinhais">São José dos Pinhais</a></li>
+              <li class="list-group-item"> <a id="pr" href="https://simple.wikipedia.org/wiki/Paran%C3%A1_(state)">Paraná</a> - <a id="brasil" href= "https://simple.wikipedia.org/wiki/Brazil">Brasil</a></li>
+              <li class="list-group-item">Since 1968 living in <a id="ctba" href="https://simple.wikipedia.org/wiki/Curitiba">Curitiba</a></li>
+              <li class="list-group-item">Working in <a id="tjpr" href="https://www.tjpr.jus.br/">Tribunal de Justiça do Paraná</a></li>
+             </ul>
+            </div>
+
+            <div>
+                    <img
+                    class="img-idx"
+                    id="imgsjp"
+                    src="https://realmarka.com.br/wp-content/uploads/2019/04/Centro_Sao_Jose_dos_Pinhais_-_PR_Brazil_-_panoramio-1240x720.jpg"
+                    alt="São José dos Pinhais">
+
+                    <img
+                    class="img-idx"
+                    id="imgpr"
+                    src="https://images.ecycle.com.br/wp-content/uploads/2022/07/19142600/alexander-schimmeck-dTPXN8fAKtY-unsplash-scaled.jpg"
+                    alt="Cataratas do Iguaçu no Paraná">
+
+                    <img
+                    class="img-idx"
+                    id="imgbrasil"
+                    src="https://i.pinimg.com/474x/15/4e/ff/154efffff72263e341de8c915d855ba4--bahia-janeiro.jpg"
+                    alt="Brazil's map">
+
+                    <img
+                    class="img-idx"
+                    id="imgctba"
+                    src="https://www.aen.pr.gov.br/sites/default/arquivos_restritos/files/imagem/2023-06/aereas_06.jpg"
+                    alt="Curitiba, with Couto Pereira stadium in the center">
+
+                    <img
+                    class="img-idx"
+                    id="imgtjpr"
+                    src="https://www.bandab.com.br/wp-content/uploads/2020/06/tjpr-scaled.jpg"
+                    alt="Tribunal de Justiça do Paraná">
+
+            </div>
+
+          </main>
+
+          <script>
+
+            const sjp = document.querySelector('#sjp')
+            const pr = document.querySelector('#pr')
+            const brasil = document.querySelector('#brasil')
+            const ctba = document.querySelector('#ctba')
+            const tjpr = document.querySelector('#tjpr')
+
+            const imgsjp = document.querySelector('#imgsjp')
+            const imgpr = document.querySelector('#imgpr')
+            const imgbrasil = document.querySelector('#imgbrasil')
+            const imgctba = document.querySelector('#imgctba')
+            const imgtjpr = document.querySelector('#imgtjpr')
+
+            console.log(pr)
+
+
+
+            sjp.addEventListener('mouseover', () => {imgsjp.style.display = "block"})
+            sjp.addEventListener('mouseout', () => {imgsjp.style.display = "none"})
+
+            pr.addEventListener('mouseover', () => {imgpr.style.display = "block"})
+            pr.addEventListener('mouseout', () => {imgpr.style.display = "none"})
+
+            brasil.addEventListener('mouseover', () => {imgbrasil.style.display = "block"})
+            brasil.addEventListener('mouseout', () => {imgbrasil.style.display = "none"})
+
+            ctba.addEventListener('mouseover', () => {imgctba.style.display = "block"})
+            ctba.addEventListener('mouseout', () => {imgctba.style.display = "none"})
+
+            tjpr.addEventListener('mouseover', () => {imgtjpr.style.display = "block"})
+            tjpr.addEventListener('mouseout', () => {imgtjpr.style.display = "none"})
+
+
+
+
+          </script>
+
+
+    </body>
+</html>

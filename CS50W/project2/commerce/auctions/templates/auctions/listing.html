@@ -1,0 +1,128 @@
+{% extends "auctions/layout.html" %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+  
+    <card class="card border-light mb-3" >
+        <div class="row g-0">
+            <div class="card text-center">
+                <div class="h4 card-header d-flex flex-row mb-3">
+                    <div class="col"></div>
+                    <div class="col">
+                        <p >{{listing.title}}</p>
+                    </div>
+                    <div class="col">
+                        <form action="{% url 'listing' listing.id %}" method="post">
+                        {% csrf_token %}
+                        {% if listing.bid_open %}                        
+                            <button type="submit" class="btn btn-primary" name="auction"><strong>Auction</strong>
+                                <span class="badge text-bg-secondary">Open</span>
+                            </button>
+                        {% elif not listing.bid_open and my_bid %}
+                            <button type="button" class="btn btn-success" name="auction"><strong>Winner</strong>
+                                <span class="badge text-bg-secondary">Closed</span>
+                            </button>
+                        {% else %}
+                            <button type="button" class="btn btn-primary" name="auction"><strong>Auction</strong>
+                                <span class="badge text-bg-secondary">Closed</span>
+                            </button>                        
+                        {% endif %}                        
+                        </form>
+                    </div>                   
+                    
+                </div>
+                <img src="{{listing.image}}" class="img-fluid rounded-start" style="max-width: 250px; margin: 15px;">
+                <p class="lead">{{listing.description}}</p>
+                <p class="h2">Actual Price: ${{listing.actual_price}} 
+                            {% if my_bid %}
+                                <span class="badge rounded-pill text-bg-secondary fs-6">My Bid</span>
+                            {% endif %}
+                        </p>            
+                <p class="h5">Original Price: ${{listing.price}}</p>            
+                <div style="font-size: 18px;">
+                    <form action="{% url 'listing' listing.id %}" method="post">
+                        {% csrf_token %}
+                        
+                            {% if watchlist %}                        
+                            <button class="btn btn-primary" type="submit" name=watchlist >Drop from watchlist</button>
+
+                            {% else %}
+                            <button class="btn btn-secondary" type="submit" name=watchlist >Put on watchlist</button>
+
+                            {% endif %}
+                        
+                    </form>
+                </div>
+            </div>
+        </div>
+    </card>
+
+    <div>
+        <form action= "{% url 'listing' listing.id %}" method="post">
+            {% csrf_token %}
+            
+                <div class="row">
+                    <div class="col-md-10">    
+                        {{ bid_form.bid|as_crispy_field}}
+                    </div>                        
+                        
+                    <button  class="col-2 btn btn-primary btn-md" style="margin-bottom: 16px;" type="submit">Bid</button>
+    
+            </div>
+        </form>        
+    </div>
+        
+    {% if my_last_bid %}
+    <div>
+        <p class="h5" style="margin-top: 10px;"> My Last Bid </p>
+        <ul class="list-group">
+            {% for bid in my_last_bid %}
+            <li class="list-group-item">${{bid.bid}} in {{bid.created}}</li>           
+            {% endfor %}
+        </ul>
+    </div>
+    {% endif %}
+    
+        <div>
+            <p class="h5" style="margin-top: 30px;"> Comments </p>
+            <div style="margin-top: 10px;"></div>
+
+            <form action= "{% url 'listing' listing.id %}" method="post">
+
+                {% csrf_token %}
+                <div class="row">
+                    <div class="col-md-10">    
+                        {{ comment_form.comment|as_crispy_field}}
+                    </div>                        
+                        
+                    <button  class="col-2 btn btn-primary btn-md" style="margin-bottom: 16px;" type="submit">Comment</button>
+    
+            </div>
+            </form>
+
+            {% if comments %}           
+            <div>
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Comment</th>
+                            <th>User</th>
+                            <th style="text-align :right">Date</th>                        
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for comment in comments %}                        
+                            <tr>
+                                <td>{{comment.comment}}</td>
+                                <td>{{comment.user}}</td>
+                                <td style="text-align :right">{{comment.created}}</td>
+                            </tr>                        
+                        {% endfor %}                        
+                    </tbody>
+                </table>
+            </div>
+            {% endif %}
+        </div>
+        </div>
+    
+{% endblock %}

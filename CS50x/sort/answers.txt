@@ -1,0 +1,11 @@
+sort1 uses: Bubble sort
+
+How do you know?: Because in worst case (big O) the algorithm tneds to n square, but is better in in a better case (big omega). In my results, "sort1" takes a worst results in shuffled data and improved when data is sorted or reversed.
+
+sort2 uses: Merge sort
+
+How do you know?: Because it takes better results in all sets of data. And the diference apears more clear when the data is more shuffled.
+
+sort3 uses: Selection sort
+
+How do you know?: Since the big o and big omega is the same and the results shows this behavior, more clear with more data.

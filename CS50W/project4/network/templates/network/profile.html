@@ -1,0 +1,18 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block body %}
+
+    
+
+    <div 
+    class="container-md"
+    id="profile"
+    profile_data = "{{profile_data}}"
+    ></div>
+    
+    {%block script%}    
+        <script type="text/babel" src="{% static 'profile/profile.js' %}"></script>
+    {% endblock %}
+{% endblock %}
+
